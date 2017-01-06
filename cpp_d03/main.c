@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan 06 16:28:32 2017 Nathan Jaunet
+** Last update Fri Jan 06 17:12:25 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -133,6 +133,19 @@ int	main(void)
     printf("String '%s' in '%s' found at index %d\n", "chaine", ex10_1.str, nb);
   StringDestroy(&ex10_1);
   StringDestroy(&ex10_2);
+
+  //Ex11
+  String ex11_1;
+  String ex11_2;
+  printf("\n---- Ex10 Insert ----\n");
+  StringInit(&ex11_1, "Une chaine dans une chaine !!!");
+  StringInit(&ex11_2, " dans une chaine");
+  ex11_1.insert_s(&ex11_1, 10, &ex11_2);
+  printf("Insert '%s' at %d : %s\n", ex11_2.str, 10, ex11_1.str);
+  ex11_1.insert_c(&ex11_1, 10, " dans une chaine");
+  printf("Insert '%s' at %d : %s\n", " dans une chaine", 10, ex11_1.str);
+  StringDestroy(&ex11_1);
+  StringDestroy(&ex11_2);
 
   return (0);
 }
