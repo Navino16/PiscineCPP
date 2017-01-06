@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan 06 14:12:21 2017 Nathan Jaunet
+** Last update Fri Jan 06 14:49:00 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -84,6 +84,18 @@ int	main(void)
   printf("With same String :\n\tReturn value : %d\n", ex06_1.compare_s(&ex06_1, &ex06_1));
   printf("With differents String :\n\tReturn value : %d\n", ex06_1.compare_c(&ex06_1, "sdqjhkqsldsql"));
   StringDestroy(&ex06_1);
+
+  //Ex07
+  String ex07_1;
+  char *str;
+  printf("\n---- Ex07 ----\n");
+  StringInit(&ex07_1, "Test string yolo");
+  str = malloc(sizeof(char) * 7);
+  printf("Initial String : %s\n", ex07_1.str);
+  printf("Expected char copied : 6\nNb copied char : %zd\n", ex07_1.copy(&ex07_1, str, 6, 5));
+  printf("Str : %s\n", str);
+  free(str);
+  StringDestroy(&ex07_1);
 
   return (0);
 }
