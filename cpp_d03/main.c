@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan  6 13:33:28 2017 Nathan Jaunet
+** Last update Fri Jan 06 13:51:13 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -67,5 +67,15 @@ int	main(void)
   printf("Original value : %s\n", ex04_1.str);
   ex04_1.clear(&ex04_1);
   printf("Final value : %s\n", ex04_1.str);
+  StringDestroy(&ex04_1);
+
+  //Ex05
+  String ex05_1;
+  printf("\n---- Ex05 ----\n");
+  StringInit(&ex05_1, "Test string yolo");
+  printf("Expected value : %d\n", 16);
+  printf("Your value : %d\n", ex05_1.size(&ex05_1));
+  StringDestroy(&ex05_1);
+
   return (0);
 }
