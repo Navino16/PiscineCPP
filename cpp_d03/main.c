@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan 06 13:51:13 2017 Nathan Jaunet
+** Last update Fri Jan 06 14:12:21 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -76,6 +76,14 @@ int	main(void)
   printf("Expected value : %d\n", 16);
   printf("Your value : %d\n", ex05_1.size(&ex05_1));
   StringDestroy(&ex05_1);
+
+  //Ex06
+  String ex06_1;
+  printf("\n---- Ex06 ----\n");
+  StringInit(&ex06_1, "Test string yolo");
+  printf("With same String :\n\tReturn value : %d\n", ex06_1.compare_s(&ex06_1, &ex06_1));
+  printf("With differents String :\n\tReturn value : %d\n", ex06_1.compare_c(&ex06_1, "sdqjhkqsldsql"));
+  StringDestroy(&ex06_1);
 
   return (0);
 }
