@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan 06 14:49:00 2017 Nathan Jaunet
+** Last update Fri Jan 06 15:07:32 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -96,6 +96,14 @@ int	main(void)
   printf("Str : %s\n", str);
   free(str);
   StringDestroy(&ex07_1);
+
+  //Ex08
+  String ex08_1;
+  printf("\n---- Ex08 ----\n");
+  StringInit(&ex08_1, "Blackbeard is OP");
+  printf("Initial String : %s\n", ex08_1.str);
+  printf("Result String : %s\n", ex08_1.c_str(&ex08_1));
+  StringDestroy(&ex08_1);
 
   return (0);
 }
