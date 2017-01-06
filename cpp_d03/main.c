@@ -5,7 +5,7 @@
 ** Login   <jaunet_n@epitech.net>
 **
 ** Started on  Fri Jan  6 09:35:32 2017 Nathan Jaunet
-** Last update Fri Jan 06 15:18:58 2017 Nathan Jaunet
+** Last update Fri Jan 06 16:28:32 2017 Nathan Jaunet
 */
 
 #include "String.h"
@@ -114,6 +114,25 @@ int	main(void)
   else
     printf("Error, this String is not empty\n");
   StringDestroy(&ex09_1);
+
+  //Ex10
+  String ex10_1;
+  String ex10_2;
+  int nb;
+  printf("\n---- Ex10 Find ----\n");
+  StringInit(&ex10_1, "Une chaine dans une chaine !!!");
+  StringInit(&ex10_2, "dans une chaine");
+  if ((nb = ex10_1.find_s(&ex10_1, &ex10_2, 4)) == -1)
+    printf("String '%s' in '%s' not found\n", ex10_2.str, ex10_1.str);
+  else
+    printf("String '%s' in '%s' found at index %d\n", ex10_2.str, ex10_1.str, nb);
+  ex10_1.assign_c(&ex10_1, "Yolo, je suis une chaine et moi aussi");
+  if ((nb = ex10_1.find_c(&ex10_1, "chaine", 6)) == -1)
+    printf("String '%s' in '%s' not found\n", "chaine", ex10_1.str);
+  else
+    printf("String '%s' in '%s' found at index %d\n", "chaine", ex10_1.str, nb);
+  StringDestroy(&ex10_1);
+  StringDestroy(&ex10_2);
 
   return (0);
 }
